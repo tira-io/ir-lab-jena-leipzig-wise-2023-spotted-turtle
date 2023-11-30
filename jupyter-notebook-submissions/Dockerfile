@@ -2,7 +2,7 @@ FROM webis/tira-ir-starter-pyterrier:0.0.4-base
 
 RUN rm -Rf /workspace/*.ipynb
 
-ADD requirements.txt *.ipynb /workspace
+COPY ["requirements.txt", "abbreviations_eng.xls", "*.ipynb", "/workspace/"]
 
 ADD example-ir-dataset /tmp-delete-ir-dataset
 
