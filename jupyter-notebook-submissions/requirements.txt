@@ -1,0 +1,4 @@
+nltk
+spacy
+typing-extensions
+xlrd
