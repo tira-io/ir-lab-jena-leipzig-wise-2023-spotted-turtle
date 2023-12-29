@@ -2,14 +2,13 @@ FROM webis/tira-ir-starter-pyterrier:0.0.4-base
 
 RUN rm -Rf /workspace/*.ipynb
 
-COPY ["requirements.txt", "abbreviations_eng.xls", "*.ipynb", "/workspace/"]
+COPY ["requirements.txt", "*.ipynb", "/workspace/"]
 
 ADD example-ir-dataset /tmp-delete-ir-dataset
 
 ARG JUPYTER_NOTEBOOK=pyterrier-notebook.ipynb
 
 RUN pip install -r requirements.txt \
-	&& python -m spacy download en_core_web_sm \
 	&& export TIRA_INPUT_DATASET=/tmp-delete-ir-dataset \
 	&& mv /workspace/${JUPYTER_NOTEBOOK} /workspace/notebook.ipynb \
 	&& export TIRA_OUTPUT_DIR=/tmp \

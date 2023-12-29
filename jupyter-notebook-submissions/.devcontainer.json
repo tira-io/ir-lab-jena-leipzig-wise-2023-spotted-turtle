@@ -5,5 +5,5 @@
       "extensions": ["ms-python.python", "ms-python.vscode-pylance", "ms-toolsai.jupyter"]
     }
   },
-  "postCreateCommand": "pip install -r requirements.txt; python -m spacy download en_core_web_sm"
+  "postCreateCommand": "pip install -r requirements.txt"
 }
